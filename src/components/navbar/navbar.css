@@ -1,0 +1,91 @@
+.main-div{
+    height: 5rem;
+    width: 100vw;
+    display: flex;
+    color: white;
+    justify-content: space-around;
+}
+
+.logo{
+ color: green;
+ font-size: 2em;
+ font-weight: 300;
+ font-weight: bold;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+
+}
+
+.right_div{
+    display: flex;
+    justify-content:end;
+    align-items: center;
+
+}
+
+.home{
+    margin: 5em;
+    text-decoration: none;
+    color:black;
+    font-size: 1.2em;
+    font-weight: 200;
+    font-weight: bold;
+
+}
+
+.contact{
+    margin: 5em;
+    text-decoration: none;
+    color:black;
+    font-size: 1.2em;
+    font-weight: 200;
+    font-weight: bold;
+}
+
+.about{
+    margin: 5em;
+    text-decoration: none;
+    color:black;
+    font-size: 1.2em;
+    font-weight: 200;
+    font-weight: bold;
+}
+
+.logIn{
+    margin: 5em;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #4CAF50; /* Green color */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s; 
+    border-radius: 5em;
+    font-weight: bold;
+}
+
+.logIn:hover{
+    background-color: #45a049
+
+}
+
+.about:hover{
+    color: #28a745
+}
+
+.home:hover{
+    color: #28a745
+}
+
+.contact:hover{
+    color: #28a745
+}
+.about:hover{
+    color: #28a745
+}

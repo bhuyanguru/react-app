@@ -1,0 +1,16 @@
+.main-container1{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 7rem;
+} 
+
+ .container-img{
+   margin-right: 10rem;
+}
+
+.profile{
+    object-fit: contain;
+    height: 25rem;
+    width: 25rem;
+}
