@@ -1,8 +1,7 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./navbar.css";
 import { Link } from "react-router-dom";
 import $ from 'jquery';
-import { useEffect } from "react";
 
 const Navbar = () => {
   useEffect(() => {
@@ -16,12 +15,13 @@ const Navbar = () => {
      
   }, []);
 
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
-
 
   const token = localStorage.getItem('token');
 
- const handleRemove = ()=> localStorage.removeItem('token');
+ const handleClicked = ()=> localStorage.removeItem('token');
+
+useEffect(()=>{},[token])
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 
   return (
@@ -37,13 +37,13 @@ const Navbar = () => {
           </Link>
           <Link className="contact">Contact</Link>
           <Link className="about">About</Link>
-          {(token!=null)?(
+          {(!token)?(
 
-              <Link to="/logIn" className="logIn" >
+              <Link to="/logIn" className="logIn"   onClick={handleClicked}>
                 LogIn
               </Link>
           ):(
-              <Link to="/logIn"  onClick={handleRemove} className="logIn">
+              <Link to="/logIn"  onClick={handleClicked} className="logIn">
                 Logout
               </Link>
 
