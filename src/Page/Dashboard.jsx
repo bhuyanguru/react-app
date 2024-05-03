@@ -2,17 +2,23 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './dashboard.css'
+import ModalUserDetails from "../components/ModalUserDetails";
 
 
 const Dashboard= () => {
   const [data, setData] = useState([]);
+  const [loading,setloading]=useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response =await axios.get("/booking");
+          setloading(true)
+        const response =await axios?.get("/booking");
         // const jsonData = await response.json();
-        setData(response.data);
+        if(response){
+            setData(response?.data);
+            setloading(false)
+        }
 
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -20,13 +26,25 @@ const Dashboard= () => {
     };
 
     fetchData();
-  }, []);
- 
 
+  }
+
+
+
+  , []);
+
+  const[showModal,setShowModal]=useState(false);
+
+   const handleClicked =()=>{
+       setShowModal(true);
+   }
 
 
   return (
     <>
+        {loading==false?
+            <>
+       < ModalUserDetails showModal={showModal} setShowModal={setShowModal}/>
       <div className="main-container">
            <div className="left-container">
              <h3 className='header'>All Appointments</h3>
@@ -42,12 +60,16 @@ const Dashboard= () => {
                 {data.map((item) => (
                   <div key={item.bookingid} className="card">
                     <h2>{item.bookingid}</h2>
-                    <Link key={item.bookingid} to ={`/details/${item.bookingid.toString()}`} className='btn-details'>Deatails</Link>
+                    <button onClick={handleClicked} className='btn-details'>Deatails</button>
                   </div>
                 ))}
               </div>
            </div>
       </div>
+            </>
+            :
+
+            <h1 className='loading'>Loading...</h1>}
     </>
   );
 };

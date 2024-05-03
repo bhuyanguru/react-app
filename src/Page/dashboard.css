@@ -50,3 +50,9 @@
 .header{
     margin-left: 10rem;
 }
+
+.loading{
+    margin-left: 60rem;
+    margin-top: 15rem;
+    color: #4CAF50;
+}

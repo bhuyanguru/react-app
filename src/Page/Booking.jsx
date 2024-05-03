@@ -44,10 +44,10 @@ function Booking() {
           };
           const headers = {
             "Content-Type": "application/json", 
-            'Accept': 'string'
+            
           };
           const response = await axios.post("/booking",body,headers);
-          console.log(response,"res")
+          // console.log(response,"res")
         //   action.resetForm();
         } catch (error) {
           navigate('/booking/updatebooking')
